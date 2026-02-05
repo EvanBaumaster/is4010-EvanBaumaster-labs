@@ -1,24 +1,36 @@
-name: Week 03 - Python Basics
-on:
-  push:
-    paths:
-      - 'week03/**'
-      - '.github/workflows/week03.yml'
-  pull_request:
-    paths:
-      - 'week03/**'
+# .github/workflows/main.yml
+name: run-pytest
+
+# Trigger: Run this workflow every time code is pushed to any branch
+on: [push]
 
 jobs:
-  test:
+  build:
+    # Use the latest Ubuntu Linux virtual machine
     runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        # Test with Python 3.10 (matches course environment)
+        python-version: ["3.10"]
+    
     steps:
+      # Step 1: Download your repository code
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      
+      # Step 2: Set up Python environment
+      - name: Set up python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: ${{ matrix.python-version }}
+      
+      # Step 3: Install Python dependencies
       - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Run Week 03 tests
         run: |
-          export PYTHONPATH="${PYTHONPATH}:week03"
-          pytest week03/tests/ -v
+          python -m pip install --upgrade pip
+          pip install pytest
+      
+      # Step 4: Run the test suite
+      - name: Test with pytest
+        run: |
+          pytest
