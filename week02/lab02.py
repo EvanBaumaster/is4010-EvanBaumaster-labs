@@ -26,8 +26,8 @@ def factorial(n):
     for i in range(2, n + 1):
         result *= i
     return result
-print(factorial(5))
-print(factorial(0))
+(factorial(5))
+(factorial(0))
 
 
 def is_prime(number):
@@ -65,7 +65,9 @@ def is_prime(number):
         if number % i == 0:
             return False
     return True
-
+(is_prime(17))
+(is_prime(4))
+(is_prime(1))
 
 def reverse_string(s):
     """Reverse a given string.
@@ -88,3 +90,5 @@ def reverse_string(s):
     'nohtyP'
     """
     return s[::-1]
+reverse_string("hello")
+reverse_string("Python")

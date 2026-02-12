@@ -54,7 +54,7 @@ def sum_of_evens(numbers):
 (27)
 The condition checks if num % 2 == 1 (odd numbers), but the function should sum even numbers. It should be num % 2 == 0:"""
 
-## Corrected Function:
+## Corrected Code:
 def sum_of_evens(numbers):
     """Calculate the sum of all even numbers in a list.
 
@@ -119,3 +119,138 @@ def get_names_of_adults(users):
             results.append(users[i]['name'])
     return results
 """
+
+#### AI's Response
+Here's a more idiomatic Python version using a list comprehension:
+def get_names_of_adults(users):
+    """Given a list of user dictionaries, returns a list of names of users
+    who are 18 or older.
+
+    Parameters
+    ----------
+    users : list of dict
+        List of user dictionaries with 'name' and 'age' keys.
+
+    Returns
+    -------
+    list of str
+        Names of users who are 18 or older.
+    """
+    return [user['name'] for user in users if user['age'] >= 18]
+Improvements:
+
+Replaces the manual loop with range(len()) with direct iteration over users
+Uses a list comprehension instead of manually appending to a results list
+
+## Corrected Code
+def get_names_of_adults(users):
+    """Given a list of user dictionaries, returns a list of names of users
+    who are 18 or older.
+
+    Parameters
+    ----------
+    users : list of dict
+        List of user dictionaries with 'name' and 'age' keys.
+
+    Returns
+    -------
+    list of str
+        Names of users who are 18 or older.
+    """
+    return [user['name'] for user in users if user['age'] >= 18]
+
+# Problem 3
+## Original Prompt
+def calculate_area(length, width):
+    if length <= 0 or width <= 0:
+        raise ValueError("Length and width must be positive numbers.")
+    return length * width
+
+## My Prompt
+"""write a professional NumPy-style docstring for this function: def calculate_area(length, width):
+    if length <= 0 or width <= 0:
+        raise ValueError("Length and width must be positive numbers.")
+    return length * width
+"""
+
+#### AI's Response
+"""Here's a professional NumPy-style docstring:"""
+
+def calculate_area(length, width):
+    """Calculate the area of a rectangle.
+
+    Parameters
+    ----------
+    length : float
+        The length of the rectangle. Must be a positive number.
+    width : float
+        The width of the rectangle. Must be a positive number.
+
+    Returns
+    -------
+    float
+        The area of the rectangle (length × width).
+
+    Raises
+    ------
+    ValueError
+        If length or width is less than or equal to 0.
+
+    Examples
+    --------
+    >>> calculate_area(5, 4)
+    20
+    >>> calculate_area(3.5, 2)
+    7.0
+    >>> calculate_area(-5, 4)
+    Traceback (most recent call last):
+        ...
+    ValueError: Length and width must be positive numbers.
+    """
+    if length <= 0 or width <= 0:
+        raise ValueError("Length and width must be positive numbers.")
+    return length * width
+
+"""This includes:
+
+Short description of what the function does
+Parameters section with type hints and descriptions
+Returns section with type and description
+Raises section documenting exceptions
+Examples section showing usage and error cases"""
+
+## Corrected Code
+def calculate_area(length, width):
+    """Calculate the area of a rectangle.
+
+    Parameters
+    ----------
+    length : float
+        The length of the rectangle. Must be a positive number.
+    width : float
+        The width of the rectangle. Must be a positive number.
+
+    Returns
+    -------
+    float
+        The area of the rectangle (length × width).
+
+    Raises
+    ------
+    ValueError
+        If length or width is less than or equal to 0.
+
+    Examples
+    --------
+    >>> calculate_area(5, 4)
+    20
+    >>> calculate_area(3.5, 2)
+    7.0
+    >>> calculate_area(-5, 4)
+    Traceback (most recent call last):
+        ...
+    ValueError: Length and width must be positive numbers.
+    """
+    if length <= 0 or width <= 0:
+        raise ValueError("Length and width must be positive numbers.")
+    return length * width
