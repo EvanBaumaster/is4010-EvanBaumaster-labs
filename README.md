@@ -7,7 +7,6 @@
 ---
 
 ## Lab Status
-
 | Week | Status | Topic |
 |------|--------|-------|
 | 00 | ![Week 00](../../actions/workflows/week00.yml/badge.svg) | Setup Verification |
@@ -24,8 +23,7 @@
 | 11 | ![Week 11](../../actions/workflows/week11.yml/badge.svg) | Structuring Code and Data |
 | 12 | ![Week 12](../../actions/workflows/week12.yml/badge.svg) | Generics and Traits |
 | 13 | ![Week 13](../../actions/workflows/week13.yml/badge.svg) | Idiomatic Rust |
-| 14 | ![Week 14](../../actions/workflows/week14.yml/badge.svg) | Rust CLI Application |
-
+| 14 | ![Week 14](../../actions/workflows/week14.yml/badge.svg) | Rust CLI Application 
 ---
 
 ## Overview
